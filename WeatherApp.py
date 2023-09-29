@@ -13,7 +13,7 @@ def home_page():
 
 def getLonLat(city, state):
   API_KEY = 'eee3e1e17b0471238be18e8f6cfbfee6'
-  geo_url = 'http://api.openweathermap.org/geo/1.0/direct?q={'+ city + state + 'US&limit={limit}&appid=' + API_KEY
+  geo_url = 'http://api.openweathermap.org/geo/1.0/direct?q={'+ city + state + 'US&limit=5&appid=' + API_KEY
   response = requests.get(geo_url)
   geo = response.json()
   st.write(geo)
