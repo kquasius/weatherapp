@@ -12,4 +12,5 @@ def home_page():
 
 def getLocation(loc):
   mgr = pyowm.weather_manager()
-  
+
+home_page()
