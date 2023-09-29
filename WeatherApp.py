@@ -1,5 +1,6 @@
 import streamlit as st
-import pyowm
+import webbrowser
+import pyown
 
 st.set_page_config(page_title="Enter location info to begin!")
 
@@ -11,6 +12,6 @@ def home_page():
     getLocation(location)
 
 def getLocation(loc):
-  mgr = pyowm.weather_manager()
+  mgr = pyown.weather_manager()
 
 home_page()
