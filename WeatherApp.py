@@ -7,7 +7,7 @@ st.header("Enter your location to begin!")
 def home_page():
   city = st.text_input('City')
   state = st.selectbox('State', {'WI', 'IL'})
-  st.button('Submit')
+  submit = st.button('Submit')
   if submit:
     getLonLat(city, state)
 
