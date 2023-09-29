@@ -1,8 +1,8 @@
 import streamlit as st
 import webbrowser
-# import pyown
 
-st.set_page_config(page_title="Enter location info to begin!")
+st.set_page_config(page_title="Katie's Weather App")
+st.header("Enter your location to begin!")
 
 def home_page():
   location = st.text_input('Your Location')
@@ -10,7 +10,6 @@ def home_page():
     getLocation(location)
 
 def getLocation(loc):
-  # mgr = pyown.weather_manager()
-  print(loc)
+  st.write(loc)
 
 home_page()
