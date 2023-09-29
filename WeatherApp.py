@@ -13,5 +13,6 @@ def home_page():
 
 def getLocation(loc):
   # mgr = pyown.weather_manager()
+  print(loc)
 
 home_page()
