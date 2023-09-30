@@ -7,10 +7,11 @@ st.header("Enter your location to begin!")
 def home_page():
   city = st.text_input("City")
   temp = getWeather(city)
-  if temp > 74:
-    sunny_and_hot()
-  elif temp > 65:
-    sunny_and_warm()
+  if temp != None:
+    if temp > 74:
+      sunny_and_hot()
+    elif temp > 65:
+      sunny_and_warm()
 
 def getWeather(city):
   api_key = 'eee3e1e17b0471238be18e8f6cfbfee6'
