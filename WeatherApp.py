@@ -5,20 +5,20 @@ st.set_page_config(page_title="Katie's Weather App")
 st.header("Enter your location to begin!")
 
 def home_page():
-  city = st.text_input('City')
-  state = st.selectbox('State', {'IL', 'WI'})
-  submit = st.button('Submit')
-  if submit:
-    getLonLat(city, state)
+  st.write("The current weather for Chicago, IL is:")
+  getWeather()
 
-def getLonLat(city, state):
+def getWeather():
   API_KEY = 'eee3e1e17b0471238be18e8f6cfbfee6'
-  geo_url = 'http://api.openweathermap.org/geo/1.0/direct?q={'+ city + state + 'US&limit=5&appid=' + API_KEY
-  response = requests.get(geo_url)
-  geo = response.json()
-  st.write(geo)
+  base_url = https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+  params = {
+    lat = 41.881832
+    lon = -87.623177
+    API_key = API_KEY
+}
+  response = requests.get(base_url, params)
+  weather = response.json()
+  st.write(weather)
 
-def getLocation(lon, lat):
-  st.write()
 
 home_page()
