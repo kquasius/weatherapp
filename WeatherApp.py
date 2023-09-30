@@ -23,10 +23,10 @@ def getWeather(city):
     temp = ((tempK - 273.15) * 1.8) + 32
     st.write("Tempurature: ", temp)
     st.write("Weather: ", desc)
+    return temp
   else:
     st.write("Error fetching weather data.")
-
-  return temp
+    return None
 
 def sunny_and_hot():
   st.write("It's sunny and hot!")
