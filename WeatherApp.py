@@ -9,13 +9,18 @@ def home_page():
   getWeather()
 
 def getWeather():
-  API_KEY = 'eee3e1e17b0471238be18e8f6cfbfee6'
-  lat = 41.881832
-  lon = -87.623177
-  url = f'https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={4}&appid={API_KEY}'
+  api_key = 'eee3e1e17b0471238be18e8f6cfbfee6'
+  city = 'Chicago'
+  url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}'
   response = requests.get(url)
-  weather = response.json()
-  st.write(weather)
+  if response.status_code == 200:
+    data = response.json()
+    temp = data['main']['temp']
+    desc = data['weather'][0]['description']
+    st.write("Tempurature: ", temp)
+    st.write("Weather: ", desc)
+  else:
+    st.write("Error fetching weather data.")
 
 
 home_page()
