@@ -22,7 +22,7 @@ def getWeather(city):
     tempK = data['main']['temp']
     desc = data['weather'][0]['description']
     temp = ((tempK - 273.15) * 1.8) + 32
-    st.write("Tempurature: ", temp)
+    st.write("Tempurature: ", int(temp))
     st.write("Weather: ", desc)
     return temp
   else:
