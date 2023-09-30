@@ -4,14 +4,22 @@ import requests
 st.set_page_config(page_title="Katie's Weather App")
 st.header("Enter your location to begin!")
 
+cities = ['Chicago', 'Madison', 'Milwaukee', 'San Francisco', 'New York City', 'Sheboygan', 'Denver']
+
 def home_page():
   city = st.text_input("City")
-  temp = getWeather(city)
-  if temp != None:
-    if temp > 74:
-      sunny_and_hot()
-    elif temp > 65:
-      sunny_and_warm()
+  submit = st.button("Submit")
+  if submit:
+    if city in cities:
+      temp = getWeather(city)
+      if temp != None:
+        st.header("Vibe for the day:")
+        if temp > 74:
+          sunny_and_hot()
+        elif temp > 65:
+          sunny_and_warm()
+    else:
+      st.write("Invalid city")
 
 def getWeather(city):
   api_key = 'eee3e1e17b0471238be18e8f6cfbfee6'
