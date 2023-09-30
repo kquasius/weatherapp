@@ -20,7 +20,7 @@ def getWeather(city):
     data = response.json()
     tempK = data['main']['temp']
     desc = data['weather'][0]['description']
-    temp = (tempK − 273.15) × 1.8 + 32
+    temp = ((tempK - 273.15) * 1.8) + 32
     st.write("Tempurature: ", temp)
     st.write("Weather: ", desc)
   else:
