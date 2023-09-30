@@ -5,7 +5,7 @@ st.set_page_config(page_title="Katie's Weather App")
 st.header("Enter your location to begin!")
 
 def home_page():
-  city = st.text_input()
+  city = st.text_input("City")
   temp = getWeather(city)
   if temp > 74:
     sunny_and_hot()
